@@ -1,9 +1,8 @@
 <script>
 export default {
-  props: {
-    message: {
-      type: String,
-      required: true
+  methods: {
+    triggerEvent() {
+      this.$emit('custom-event', 'Halo dari komponen anak!')
     }
   }
 }
@@ -11,6 +10,6 @@ export default {
 
 <template>
   <div>
-    <p>Pesan yang diterima: {{ message }}</p>
+    <button @click="triggerEvent">Kirim Event ke Induk</button>
   </div>
 </template>

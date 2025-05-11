@@ -1,13 +1,14 @@
 <script>
 import ChildComponent from './components/ChildComponent.vue'
 
+
 export default {
   components: {
     ChildComponent
   },
-  data() {
-    return {
-      parentMessage: 'Pesan dari induk'
+  methods: {
+    handleChildEvent(data) {
+      alert('Event dari anak diterima dengan data: ' + data)
     }
   }
 }
@@ -16,6 +17,6 @@ export default {
 <template>
   <div>
     <h1>Komponen Induk</h1>
-    <ChildComponent :message="parentMessage" />
+    <ChildComponent @custom-event="handleChildEvent" />
   </div>
 </template>
