@@ -1,8 +1,9 @@
 <script>
 export default {
-  data() {
-    return {
-      message: 'Halo dari komponen anak!'
+  props: {
+    message: {
+      type: String,
+      required: true
     }
   }
 }
@@ -10,6 +11,6 @@ export default {
 
 <template>
   <div>
-    <p>{{ message }}</p>
+    <p>Pesan yang diterima: {{ message }}</p>
   </div>
 </template>
